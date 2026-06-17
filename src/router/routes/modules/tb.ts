@@ -22,6 +22,18 @@ const tb: AppRouteModule = {
     orderNo: 1,
   },
   children: [
+    {
+      path: '/openclaw/chat',
+      name: 'OpenClawChat',
+      component: () => import('/@/views/openclaw/chat.vue'),
+      meta: {
+        orderNo: 2,
+        icon: 'i-ant-design:message-outlined',
+        tabIcon: 'i-ant-design:message-outlined',
+        title: '智能体对话',
+        authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
+      },
+    },
     // {
     //   path: '/home',
     //   name: 'TbHome',
