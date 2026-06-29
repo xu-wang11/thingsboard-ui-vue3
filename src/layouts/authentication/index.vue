@@ -15,8 +15,8 @@
   <AuthPageLayout
     :app-name="appName"
     :logo="logo"
-    :page-title="t('Thingsboard Iot Platform')"
-    :page-description="t('基于Vue3 的ThingsBoard 前端应用（ThingsBoard v4.2.0）')"
+    :page-title="t('四川和邦生物工业智能体')"
+    :page-description="t('从互联到智能')"
   >
     <!-- 自定义工具栏 -->
     <!-- <template #toolbar></template> -->
