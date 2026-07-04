@@ -2,7 +2,7 @@
   <div :class="prefixCls" :style="getWrapStyle">
     <Spin :spinning="loading" size="large" :style="getWrapStyle">
       <div class="overflow-hidden h-full" :style="getWrapStyle">
-        <iframe class="dashboard-frame" :src="frameSrc" ref="frameRef" @load="hideLoading"></iframe>
+        <iframe class="dashboard-frame" :src="frameSrc" ref="frameRef" allow="fullscreen" @load="hideLoading"></iframe>
       </div>
     </Spin>
   </div>
@@ -23,12 +23,6 @@
   import { Dashboard, getDashboardById } from '/@/api/tb/dashboard';
   import { useLayoutHeight } from '/@/layouts/default/content/useContentViewHeight';
   import { useGlobSetting } from '/@/hooks/setting';
-
-  const props = defineProps({
-    offsetX: { type: Number, default: 0 },
-    offsetY: { type: Number, default: 0 },
-    fullHeight: { type: Boolean, default: false },
-  });
 
   const padding = 13;
 
@@ -77,23 +71,11 @@
       return;
     }
 
-    const offsetX = props.offsetX || 0;
-    const offsetY = props.offsetY || 0;
-    iframe.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-
-    if (offsetX != 0) {
-      iframe.style.width = `calc(100% + ${-offsetX}px)`;
-    }
-    if (props.fullHeight) {
-      const clientHeight = document.documentElement.clientHeight - 6;
-      iframe.style.height = `${clientHeight - offsetY}px`;
-      return;
-    }
     const top = headerHeightRef.value + padding;
     topRef.value = top;
     heightRef.value = window.innerHeight - top;
     const clientHeight = document.documentElement.clientHeight - top;
-    iframe.style.height = `${clientHeight - padding - offsetY}px`;
+    iframe.style.height = `${clientHeight - padding}px`;
   }
 
   async function getDashboard() {
