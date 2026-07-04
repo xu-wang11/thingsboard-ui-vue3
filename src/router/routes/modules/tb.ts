@@ -137,17 +137,18 @@ const tb: AppRouteModule = {
             authority: [Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
           },
         },
-        // {
-        //   path: '/dashboard/:dashboardId',
-        //   name: 'DashboardEditor',
-        //   component: () => import('/@/views/tb/dashboard/editor.vue'),
-        //   meta: {
-        //     icon: 'i-ant-design:layout-filled',
-        //     tabIcon: 'i-ant-design:layout-filled',
-        //     title: t('routes.tb.dashboard'),
-        //     authority: [Authority.TENANT_ADMIN],
-        //   },
-        // },
+        {
+          path: '/dashboard/:dashboardId',
+          name: 'DashboardEditor',
+          component: () => import('/@/views/tb/dashboard/editor.vue'),
+          meta: {
+            icon: 'i-ant-design:layout-filled',
+            tabIcon: 'i-ant-design:layout-filled',
+            title: t('routes.tb.dashboard'),
+            hideMenu: true,
+            authority: [Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
+          },
+        },
       ],
     },
     {

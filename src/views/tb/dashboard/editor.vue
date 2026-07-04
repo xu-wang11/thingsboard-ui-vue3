@@ -2,7 +2,7 @@
   <div :class="prefixCls" :style="getWrapStyle">
     <Spin :spinning="loading" size="large" :style="getWrapStyle">
       <div class="overflow-hidden h-full" :style="getWrapStyle">
-        <iframe :src="frameSrc" ref="frameRef" @load="hideLoading"></iframe>
+        <iframe class="dashboard-frame" :src="frameSrc" ref="frameRef" @load="hideLoading"></iframe>
       </div>
     </Spin>
   </div>
@@ -25,8 +25,8 @@
   import { useGlobSetting } from '/@/hooks/setting';
 
   const props = defineProps({
-    offsetX: { type: Number, default: -254 },
-    offsetY: { type: Number, default: -70 },
+    offsetX: { type: Number, default: 0 },
+    offsetY: { type: Number, default: 0 },
     fullHeight: { type: Boolean, default: false },
   });
 
@@ -48,7 +48,7 @@
   // 使用环境变量配置ThingsBoard基础地址
   const frameSrc = computed(() => {
     const { tbBaseUrl } = useGlobSetting();
-    return `${tbBaseUrl}/dashboards/${dashboardId.value}`;
+    return `${tbBaseUrl}/dashboard/${dashboardId.value}`;
   });
 
   useWindowSizeFn(calcHeight, 150, { immediate: true });
@@ -107,3 +107,12 @@
     calcHeight();
   }
 </script>
+<style scoped>
+  .dashboard-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    box-sizing: border-box;
+  }
+</style>

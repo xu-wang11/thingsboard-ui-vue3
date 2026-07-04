@@ -17,7 +17,14 @@
       <main ref="threadRef" class="thread">
         <article v-for="(message, index) in messages" :key="index" :class="['message', message.role]">
           <div class="message-role">{{ message.role === 'assistant' ? '知化' : '我' }}</div>
-          <div class="message-body">{{ message.content }}</div>
+          <div class="message-body">
+            <template v-for="(part, partIndex) in parseMessageContent(message.content)" :key="partIndex">
+              <a v-if="part.type === 'image'" :href="part.content" target="_blank" rel="noopener noreferrer">
+                <img class="message-image" :src="part.content" :alt="part.alt" />
+              </a>
+              <span v-else>{{ part.content }}</span>
+            </template>
+          </div>
         </article>
         <article v-if="loading" class="message assistant">
           <div class="message-role">知化</div>
@@ -48,6 +55,27 @@
 import { nextTick, ref } from 'vue';
 import { CheckCircleOutlined, SendOutlined } from '@ant-design/icons-vue';
 import { ChatMessage, sendZhihuaChat } from '/@/api/openclaw/chat';
+
+interface MessagePart {
+  type: 'text' | 'image';
+  content: string;
+  alt?: string;
+}
+
+function parseMessageContent(content: string): MessagePart[] {
+  const parts: MessagePart[] = [];
+  const imagePattern = /!\[([^\]]*)\]\((\/chart\/[^)\s]+)\)/g;
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = imagePattern.exec(content)) !== null) {
+    if (match.index > cursor) parts.push({ type: 'text', content: content.slice(cursor, match.index) });
+    parts.push({ type: 'image', content: match[2], alt: match[1] || '生成的图表' });
+    cursor = match.index + match[0].length;
+  }
+  if (cursor < content.length) parts.push({ type: 'text', content: content.slice(cursor) });
+  return parts.length ? parts : [{ type: 'text', content }];
+}
 
 const loading = ref(false);
 const chatError = ref('');
@@ -180,6 +208,17 @@ async function sendCurrentMessage() {
   color: #17211c;
   line-height: 1.7;
   white-space: pre-wrap;
+}
+
+.message-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 520px;
+  margin: 8px 0;
+  border: 1px solid #dfe5e1;
+  border-radius: 6px;
+  object-fit: contain;
 }
 
 .message.user .message-body {

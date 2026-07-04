@@ -101,6 +101,11 @@ export const useUserStore = defineStore('app-user', {
       if (token?.refreshToken) {
         localStorage.setItem('refresh_token', token.refreshToken);
         localStorage.setItem('refresh_token_expiration', getExpiration(token.refreshToken)?.getTime().toString() || '');
+      } else {
+        localStorage.removeItem('jwt_token');
+        localStorage.removeItem('jwt_token_expiration');
+        localStorage.removeItem('refresh_token');
+        localStorage.removeItem('refresh_token_expiration');
       }
     },
 
