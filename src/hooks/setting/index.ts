@@ -1,6 +1,6 @@
 import type { GlobConfig } from '/#/config';
 
-import { getAppEnvConfig, isProdMode } from '/@/utils/env';
+import { getAppEnvConfig } from '/@/utils/env';
 
 let globCache: Readonly<GlobConfig>;
 export const useGlobSetting = (): Readonly<GlobConfig> => {
@@ -12,7 +12,6 @@ export const useGlobSetting = (): Readonly<GlobConfig> => {
     VITE_GLOB_API_URL_WEBSOCKET,
     VITE_GLOB_APP_SHORT_NAME,
     VITE_GLOB_API_URL_PREFIX,
-    VITE_PROXY,
     VITE_GLOB_TB_BASE_URL,
   } = getAppEnvConfig();
 
@@ -32,12 +31,11 @@ export const useGlobSetting = (): Readonly<GlobConfig> => {
   })();
 
   const websocketPath = ((): string => {
-    if (isProdMode()) {
-      return `${location.protocol.replace('https:', 'wss:').replace('http:', 'ws:')}${location.host}${VITE_GLOB_API_URL_WEBSOCKET}`;
-    }
-    const viteProxy = JSON.parse(VITE_PROXY);
-    const proxyHost = viteProxy[0][1].replace(viteProxy[0][0], '');
-    return `${proxyHost.replace('https:', 'wss:').replace('http:', 'ws:')}${VITE_GLOB_API_URL_WEBSOCKET}`;
+    // 始终基于当前页面 origin，让 WebSocket 走前端同源地址，
+    // 由 vite 代理（dev，ws:true）或反向代理（prod）转发到后端。
+    // 若硬编码代理目标（如 127.0.0.1:18080），局域网/多人访问时
+    // 浏览器会直连后端端口而绕过代理，导致连接失败。
+    return `${location.protocol.replace('https:', 'wss:').replace('http:', 'ws:')}//${location.host}${VITE_GLOB_API_URL_WEBSOCKET}`;
   })();
 
   // Take global configuration
