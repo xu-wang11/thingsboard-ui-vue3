@@ -56,7 +56,7 @@ const setting: ProjectConfig = {
   // Header configuration
   headerSetting: {
     // header bg color
-    bgColor: HEADER_PRESET_BG_COLOR_LIST[0],
+    bgColor: HEADER_PRESET_BG_COLOR_LIST[3],
     // Fixed at the top
     fixed: true,
     // Whether to show top
@@ -97,11 +97,11 @@ const setting: ProjectConfig = {
     // Menu mode
     mode: MenuModeEnum.INLINE,
     // Menu type
-    type: MenuTypeEnum.MIX,
+    type: MenuTypeEnum.SIDEBAR,
     // Menu theme
     theme: ThemeEnum.LIGHT,
     // Split menu
-    split: true,
+    split: false,
     // Top menu layout
     topMenuAlign: 'center',
     // Fold trigger position
@@ -177,6 +177,11 @@ const setting: ProjectConfig = {
   // Whether to cancel the http request that has been sent but not responded when switching the interface.
   // If it is enabled, I want to overwrite a single interface. Can be set in a separate interface
   removeAllHttpPending: false,
+
+  
+ 
+
 };
 
 export default setting;
+

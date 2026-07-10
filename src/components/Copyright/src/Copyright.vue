@@ -12,11 +12,11 @@
   });
 
   withDefaults(defineProps<Props>(), {
-    companyName: 'Thingsboard-UI-Vue3',
-    companySiteLink: '',
-    date: '2024',
-    icp: '',
-    icpLink: '',
+    companyName: '四川和邦生物科技股份有限公司',
+    companySiteLink: 'https://www.hebang.cn/',
+    date: '2026',
+    icp: '蜀ICP备19012355号-1',
+    icpLink: 'https://beian.miit.gov.cn/#/Integrated/index',
   });
 </script>
 
