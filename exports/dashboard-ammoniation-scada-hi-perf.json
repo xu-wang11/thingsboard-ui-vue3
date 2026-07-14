@@ -1,0 +1,2576 @@
+{
+  "id": {
+    "entityType": "DASHBOARD",
+    "id": "3ec665a0-7c30-11f1-aed8-2b3e7af0720a"
+  },
+  "createdTime": 1783668207866,
+  "tenantId": {
+    "entityType": "TENANT",
+    "id": "ebac26d0-6964-11f1-9146-c78c3e9c6c4b"
+  },
+  "title": "氨化工序 SCADA 备份 Hi-Perf",
+  "name": "氨化工序 SCADA 备份 Hi-Perf",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "assignedCustomers": null,
+  "configuration": {
+    "timewindow": {
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "timewindowMs": 3600000
+      },
+      "aggregation": {
+        "type": "NONE",
+        "limit": 25000
+      }
+    },
+    "filters": {},
+    "entityAliases": {},
+    "states": {
+      "default": {
+        "root": true,
+        "name": "氨化工序 SCADA",
+        "layouts": {
+          "main": {
+            "widgets": {
+              "02d3d94d-90b6-47b8-ac8b-b7c416c55423": {
+                "col": 13,
+                "row": 2,
+                "sizeX": 5,
+                "sizeY": 5,
+                "mobileOrder": 202,
+                "mobileHeight": 5
+              },
+              "13bfebd9-34c4-4124-a5c7-2624788a3992": {
+                "col": 18,
+                "row": 13,
+                "sizeX": 5,
+                "sizeY": 5,
+                "mobileOrder": 209,
+                "mobileHeight": 6
+              },
+              "4ea884c1-ee0b-4ef8-a360-29f397e27c4d": {
+                "col": 24,
+                "row": 17,
+                "sizeX": 7,
+                "sizeY": 5,
+                "mobileOrder": 217,
+                "mobileHeight": 5
+              },
+              "5b03038a-df21-4abf-9d68-c048bde14b6a": {
+                "col": 25,
+                "row": 23,
+                "sizeX": 5,
+                "sizeY": 4,
+                "mobileOrder": 225,
+                "mobileHeight": 5
+              },
+              "a029ce24-6d5b-4b91-8aec-e91aed83c856": {
+                "col": 40,
+                "row": 14,
+                "sizeX": 5,
+                "sizeY": 4,
+                "mobileOrder": 233,
+                "mobileHeight": 6
+              },
+              "19b1a553-b6c3-483d-b673-12a60c782b1d": {
+                "col": 45,
+                "row": 18,
+                "sizeX": 4,
+                "sizeY": 4,
+                "mobileOrder": 241,
+                "mobileHeight": 5
+              },
+              "84a8167b-130e-4630-bf88-a4b105f2a5ec": {
+                "col": 24,
+                "row": 33,
+                "sizeX": 4,
+                "sizeY": 5,
+                "mobileOrder": 1017,
+                "mobileHeight": 7
+              },
+              "131953ab-ee75-408d-9c0d-e8ada4268701": {
+                "col": 30,
+                "row": 37,
+                "sizeX": 4,
+                "sizeY": 4,
+                "mobileOrder": 1025,
+                "mobileHeight": 6
+              },
+              "386a2596-62c4-4036-b76b-4902b3b7e212": {
+                "col": 57,
+                "row": 16,
+                "sizeX": 6,
+                "sizeY": 6,
+                "mobileOrder": 250,
+                "mobileHeight": 8
+              },
+              "8fa40ad2-744c-47d6-bcf4-5575a57b8aef": {
+                "col": 53,
+                "row": 28,
+                "sizeX": 4,
+                "sizeY": 5,
+                "mobileOrder": 559,
+                "mobileHeight": 5
+              },
+              "62873f0d-2743-4a5f-a19a-041d28c64033": {
+                "col": 64,
+                "row": 17,
+                "sizeX": 6,
+                "sizeY": 5,
+                "mobileOrder": 266,
+                "mobileHeight": 5
+              },
+              "5bbb9ed7-cdca-4901-ba92-e80e2379de0f": {
+                "col": 65,
+                "row": 23,
+                "sizeX": 4,
+                "sizeY": 5,
+                "mobileOrder": 374,
+                "mobileHeight": 7
+              },
+              "afdf546c-f4ee-46bd-9192-b30d8c889920": {
+                "col": 68,
+                "row": 34,
+                "sizeX": 4,
+                "sizeY": 5,
+                "mobileOrder": 1273,
+                "mobileHeight": 5
+              },
+              "3a7b9403-22d9-4398-9f94-94fa7b407896": {
+                "col": 74,
+                "row": 19,
+                "sizeX": 4,
+                "sizeY": 5,
+                "mobileOrder": 1280,
+                "mobileHeight": 5
+              },
+              "1d46452b-92be-403f-b77b-aa1dc93510bf": {
+                "col": 55,
+                "row": 34,
+                "sizeX": 7,
+                "sizeY": 5,
+                "mobileOrder": 1265,
+                "mobileHeight": 6
+              },
+              "3c33e1b5-f84b-45c5-8c0c-0c24f60a644a": {
+                "col": 56,
+                "row": 40,
+                "sizeX": 5,
+                "sizeY": 5,
+                "mobileOrder": 1358,
+                "mobileHeight": 5
+              },
+              "f2466076-0083-42c7-bcff-742ef04dda84": {
+                "col": 24,
+                "row": 1,
+                "sizeX": 6,
+                "sizeY": 4,
+                "mobileOrder": 2204,
+                "mobileHeight": 4
+              },
+              "226d67b8-ccb9-4f1e-853e-fb4288c1d496": {
+                "col": 11,
+                "row": 14,
+                "sizeX": 5,
+                "sizeY": 3,
+                "mobileOrder": 2216,
+                "mobileHeight": 4
+              },
+              "c02fd005-3943-4877-94e9-db93ec4e6b3e": {
+                "col": 12,
+                "row": 21,
+                "sizeX": 5,
+                "sizeY": 3,
+                "mobileOrder": 2222,
+                "mobileHeight": 4
+              },
+              "60d7314f-8223-4ec3-9dcd-14d50cad465a": {
+                "col": 12,
+                "row": 24,
+                "sizeX": 5,
+                "sizeY": 3,
+                "mobileOrder": 2228,
+                "mobileHeight": 4
+              },
+              "5ddb62ff-762e-4b41-a89f-cc86af73ce2a": {
+                "col": 14,
+                "row": 34,
+                "sizeX": 4,
+                "sizeY": 4,
+                "mobileOrder": 2234,
+                "mobileHeight": 4
+              },
+              "3b670c5f-65a7-45f5-91bb-ea70d8f5594b": {
+                "col": 30,
+                "row": 29,
+                "sizeX": 4,
+                "sizeY": 2,
+                "mobileOrder": 2240,
+                "mobileHeight": 4
+              },
+              "40440283-1ba9-4a65-a6da-c498da92dd93": {
+                "col": 45,
+                "row": 10,
+                "sizeX": 4,
+                "sizeY": 3,
+                "mobileOrder": 2246,
+                "mobileHeight": 4
+              },
+              "ad8066f5-f54c-4eeb-959f-a43cb1d5ad94": {
+                "col": 50,
+                "row": 16,
+                "sizeX": 3,
+                "sizeY": 5,
+                "mobileOrder": 2252,
+                "mobileHeight": 4
+              },
+              "1565a054-e417-419a-b8b4-ffcea6eecec7": {
+                "col": 35,
+                "row": 38,
+                "sizeX": 3,
+                "sizeY": 2,
+                "mobileOrder": 2258,
+                "mobileHeight": 4
+              },
+              "ba1177a2-5f52-4479-bd46-cf00705f840a": {
+                "col": 49,
+                "row": 22,
+                "sizeX": 5,
+                "sizeY": 3,
+                "mobileOrder": 2264,
+                "mobileHeight": 4
+              },
+              "487e813f-69a1-4997-b37f-1843c50a1878": {
+                "col": 73,
+                "row": 12,
+                "sizeX": 3,
+                "sizeY": 4,
+                "mobileOrder": 2270,
+                "mobileHeight": 4
+              },
+              "ffc60304-e33f-41f5-8886-7337b306cbda": {
+                "col": 72,
+                "row": 30,
+                "sizeX": 4,
+                "sizeY": 4,
+                "mobileOrder": 2276,
+                "mobileHeight": 4
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "rgba(255,255,255,1)",
+              "columns": 88,
+              "margin": 0,
+              "outerMargin": false,
+              "backgroundSizeMode": "100%",
+              "layoutType": "scada",
+              "backgroundImageUrl": "tb-image;/api/images/tenant/hobon_factory_line_slide2.png"
+            }
+          }
+        }
+      }
+    },
+    "settings": {
+      "stateControllerId": null,
+      "showTitle": true,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": false
+    },
+    "widgets": {
+      "02d3d94d-90b6-47b8-ac8b-b7c416c55423": {
+        "id": "02d3d94d-90b6-47b8-ac8b-b7c416c55423",
+        "type": "rpc",
+        "typeFullFqn": "system.centrifugal_pump",
+        "sizeX": 5,
+        "sizeY": 5,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/centrifugal-pump.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {
+                "running": {
+                  "action": "GET_ATTRIBUTE",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "running",
+                    "scope": "SHARED_SCOPE"
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "warning": {
+                  "action": "GET_ALARM_STATUS",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": [
+                      "MAJOR",
+                      "MINOR",
+                      "WARNING",
+                      "INDETERMINATE"
+                    ],
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "critical": {
+                  "action": "GET_ALARM_STATUS",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": [
+                      "CRITICAL"
+                    ],
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "criticalAnimation": {
+                  "action": "DO_NOTHING",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "rotationAnimationSpeed": {
+                  "action": "DO_NOTHING",
+                  "defaultValue": 1,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "click": {
+                  "type": "doNothing",
+                  "targetDashboardStateId": null,
+                  "openRightLayout": false,
+                  "setEntityId": false,
+                  "stateEntityParamName": null,
+                  "openInSeparateDialog": false,
+                  "openInPopover": false
+                }
+              },
+              "properties": {
+                "rightTopConnector": true,
+                "rightBottomConnector": false,
+                "leftTopConnector": true,
+                "leftBottomConnector": false,
+                "topLeftConnector": false,
+                "topRightConnector": false,
+                "runningColor": "#1C943E",
+                "stoppedColor": "#696969",
+                "warningColor": "#FAA405",
+                "criticalColor": "#D12730"
+              }
+            }
+          },
+          "title": "0602-P-07 硫酸加料泵",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a41f6aa0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "13bfebd9-34c4-4124-a5c7-2624788a3992": {
+        "id": "13bfebd9-34c4-4124-a5c7-2624788a3992",
+        "type": "rpc",
+        "typeFullFqn": "system.hp_heat_exchanger",
+        "sizeX": 6,
+        "sizeY": 6,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/heat-exchanger-hp.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0601-E-02 羟乙腈预热器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0601-E-02 羟乙腈预热器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a46f8670-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "4ea884c1-ee0b-4ef8-a360-29f397e27c4d": {
+        "id": "4ea884c1-ee0b-4ef8-a360-29f397e27c4d",
+        "type": "rpc",
+        "typeFullFqn": "system.hp_heat_exchanger",
+        "sizeX": 6,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/heat-exchanger-hp.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0601-X-02 反应进料混合器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0601-X-02 反应进料混合器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a4a05a71-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "5b03038a-df21-4abf-9d68-c048bde14b6a": {
+        "id": "5b03038a-df21-4abf-9d68-c048bde14b6a",
+        "type": "rpc",
+        "typeFullFqn": "system.hp_heat_exchanger",
+        "sizeX": 6,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/heat-exchanger-hp.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0601-X-01 氨蒸汽混合器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0601-X-01 氨蒸汽混合器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a4cee480-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "a029ce24-6d5b-4b91-8aec-e91aed83c856": {
+        "id": "a029ce24-6d5b-4b91-8aec-e91aed83c856",
+        "type": "rpc",
+        "typeFullFqn": "system.hp_heat_exchanger",
+        "sizeX": 6,
+        "sizeY": 6,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/heat-exchanger-hp.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0601-R-02 气氨加热器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0601-R-02 气氨加热器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a4ffdf90-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "19b1a553-b6c3-483d-b673-12a60c782b1d": {
+        "id": "19b1a553-b6c3-483d-b673-12a60c782b1d",
+        "type": "rpc",
+        "typeFullFqn": "system.hp_heat_exchanger",
+        "sizeX": 7,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/heat-exchanger-hp.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0601-R-01 管式反应器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0601-R-01 管式反应器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a531c500-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "84a8167b-130e-4630-bf88-a4b105f2a5ec": {
+        "id": "84a8167b-130e-4630-bf88-a4b105f2a5ec",
+        "type": "rpc",
+        "typeFullFqn": "system.large_cylindrical_tank",
+        "sizeX": 6,
+        "sizeY": 7,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/large-cylindrical-tank.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0601-V-01 氨汽化缓冲罐",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0601-V-01 氨汽化缓冲罐",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a5618790-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "131953ab-ee75-408d-9c0d-e8ada4268701": {
+        "id": "131953ab-ee75-408d-9c0d-e8ada4268701",
+        "type": "rpc",
+        "typeFullFqn": "system.hp_heat_exchanger",
+        "sizeX": 6,
+        "sizeY": 6,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/heat-exchanger-hp.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0601-E-01 氨汽化器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0601-E-01 氨汽化器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a58f7560-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "386a2596-62c4-4036-b76b-4902b3b7e212": {
+        "id": "386a2596-62c4-4036-b76b-4902b3b7e212",
+        "type": "rpc",
+        "typeFullFqn": "system.large_cylindrical_tank",
+        "sizeX": 7,
+        "sizeY": 8,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/large-cylindrical-tank.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0602-V-01 反应液闪发器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0602-V-01 反应液闪发器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a5c30880-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "8fa40ad2-744c-47d6-bcf4-5575a57b8aef": {
+        "id": "8fa40ad2-744c-47d6-bcf4-5575a57b8aef",
+        "type": "rpc",
+        "typeFullFqn": "system.centrifugal_pump",
+        "sizeX": 5,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/centrifugal-pump.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {
+                "running": {
+                  "action": "GET_ATTRIBUTE",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "running",
+                    "scope": "SHARED_SCOPE"
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "warning": {
+                  "action": "GET_ALARM_STATUS",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": [
+                      "MAJOR",
+                      "MINOR",
+                      "WARNING",
+                      "INDETERMINATE"
+                    ],
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "critical": {
+                  "action": "GET_ALARM_STATUS",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": [
+                      "CRITICAL"
+                    ],
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "criticalAnimation": {
+                  "action": "DO_NOTHING",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "rotationAnimationSpeed": {
+                  "action": "DO_NOTHING",
+                  "defaultValue": 1,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "click": {
+                  "type": "doNothing",
+                  "targetDashboardStateId": null,
+                  "openRightLayout": false,
+                  "setEntityId": false,
+                  "stateEntityParamName": null,
+                  "openInSeparateDialog": false,
+                  "openInPopover": false
+                }
+              },
+              "properties": {
+                "rightTopConnector": false,
+                "rightBottomConnector": true,
+                "leftTopConnector": true,
+                "leftBottomConnector": false,
+                "topLeftConnector": false,
+                "topRightConnector": false,
+                "runningColor": "#1C943E",
+                "stoppedColor": "#696969",
+                "warningColor": "#FAA405",
+                "criticalColor": "#D12730"
+              }
+            }
+          },
+          "title": "0602-P-01 闪发液泵",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a5fe3cc0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "62873f0d-2743-4a5f-a19a-041d28c64033": {
+        "id": "62873f0d-2743-4a5f-a19a-041d28c64033",
+        "type": "rpc",
+        "typeFullFqn": "system.hp_heat_exchanger",
+        "sizeX": 6,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/heat-exchanger-hp.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0602-E-02 闪发器冷凝器",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0602-E-02 闪发器冷凝器",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a62f5ee0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "5bbb9ed7-cdca-4901-ba92-e80e2379de0f": {
+        "id": "5bbb9ed7-cdca-4901-ba92-e80e2379de0f",
+        "type": "rpc",
+        "typeFullFqn": "system.small_cylindrical_tank",
+        "sizeX": 5,
+        "sizeY": 7,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/small-cylindrical-tank.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0602-V-02 冷凝液罐",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0602-V-02 冷凝液罐",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a65f96a0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "afdf546c-f4ee-46bd-9192-b30d8c889920": {
+        "id": "afdf546c-f4ee-46bd-9192-b30d8c889920",
+        "type": "rpc",
+        "typeFullFqn": "system.centrifugal_pump",
+        "sizeX": 5,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/centrifugal-pump.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0602-P-06 闪蒸真空凝液泵",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0602-P-06 闪蒸真空凝液泵",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a6923f60-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "3a7b9403-22d9-4398-9f94-94fa7b407896": {
+        "id": "3a7b9403-22d9-4398-9f94-94fa7b407896",
+        "type": "rpc",
+        "typeFullFqn": "system.centrifugal_pump",
+        "sizeX": 5,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/centrifugal-pump.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {
+                "running": {
+                  "action": "GET_ATTRIBUTE",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "running",
+                    "scope": "SHARED_SCOPE"
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "warning": {
+                  "action": "GET_ALARM_STATUS",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": [
+                      "MAJOR",
+                      "MINOR",
+                      "WARNING",
+                      "INDETERMINATE"
+                    ],
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "critical": {
+                  "action": "GET_ALARM_STATUS",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": [
+                      "CRITICAL"
+                    ],
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "criticalAnimation": {
+                  "action": "DO_NOTHING",
+                  "defaultValue": false,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "rotationAnimationSpeed": {
+                  "action": "DO_NOTHING",
+                  "defaultValue": 1,
+                  "executeRpc": {
+                    "method": "getState",
+                    "requestTimeout": 5000,
+                    "requestPersistent": false,
+                    "persistentPollingInterval": 1000
+                  },
+                  "getAttribute": {
+                    "key": "state",
+                    "scope": null
+                  },
+                  "getTimeSeries": {
+                    "key": "state"
+                  },
+                  "getAlarmStatus": {
+                    "severityList": null,
+                    "typeList": null
+                  },
+                  "dataToValue": {
+                    "type": "NONE",
+                    "compareToValue": true,
+                    "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+                  }
+                },
+                "click": {
+                  "type": "doNothing",
+                  "targetDashboardStateId": null,
+                  "openRightLayout": false,
+                  "setEntityId": false,
+                  "stateEntityParamName": null,
+                  "openInSeparateDialog": false,
+                  "openInPopover": false
+                }
+              },
+              "properties": {
+                "rightTopConnector": true,
+                "rightBottomConnector": true,
+                "leftTopConnector": true,
+                "leftBottomConnector": true,
+                "topLeftConnector": false,
+                "topRightConnector": false,
+                "runningColor": "#1C943E",
+                "stoppedColor": "#696969",
+                "warningColor": "#FAA405",
+                "criticalColor": "#D12730"
+              }
+            }
+          },
+          "title": "0602-C-01 闪发真空泵",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a6c31360-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "1d46452b-92be-403f-b77b-aa1dc93510bf": {
+        "id": "1d46452b-92be-403f-b77b-aa1dc93510bf",
+        "type": "rpc",
+        "typeFullFqn": "system.small_cylindrical_tank",
+        "sizeX": 5,
+        "sizeY": 6,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/small-cylindrical-tank.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0602-V-100 机封水回收罐",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0602-V-100 机封水回收罐",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a6f34b20-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "3c33e1b5-f84b-45c5-8c0c-0c24f60a644a": {
+        "id": "3c33e1b5-f84b-45c5-8c0c-0c24f60a644a",
+        "type": "rpc",
+        "typeFullFqn": "system.centrifugal_pump",
+        "sizeX": 5,
+        "sizeY": 5,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/centrifugal-pump.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "0602-P-100 机封水回收泵",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "0602-P-100 机封水回收泵",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a7244630-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "f2466076-0083-42c7-bcff-742ef04dda84": {
+        "id": "f2466076-0083-42c7-bcff-742ef04dda84",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_wheel_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-wheel-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06PHV_01101，图像读取待核验 硫酸支路手动阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06PHV_01101硫酸支路手动阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 12,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a75170b0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "226d67b8-ccb9-4f1e-853e-fb4288c1d496": {
+        "id": "226d67b8-ccb9-4f1e-853e-fb4288c1d496",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06FV_01101 流量调节阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06TV_01101 流量调节阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a7e06a40-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "c02fd005-3943-4877-94e9-db93ec4e6b3e": {
+        "id": "c02fd005-3943-4877-94e9-db93ec4e6b3e",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06FV_01102 流量调节阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06FV_01102 流量调节阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a822f180-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "60d7314f-8223-4ec3-9dcd-14d50cad465a": {
+        "id": "60d7314f-8223-4ec3-9dcd-14d50cad465a",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06FV_01105 流量调节阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06TV_01105 流量调节阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a86a33b0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "5ddb62ff-762e-4b41-a89f-cc86af73ce2a": {
+        "id": "5ddb62ff-762e-4b41-a89f-cc86af73ce2a",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06LV_01101 液氨支路液位阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06LV_01101 液氨支路液位阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a8af04e0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "3b670c5f-65a7-45f5-91bb-ea70d8f5594b": {
+        "id": "3b670c5f-65a7-45f5-91bb-ea70d8f5594b",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06FV_01104 串级流量阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06FV_01104 串级流量阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a8f49960-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "40440283-1ba9-4a65-a6da-c498da92dd93": {
+        "id": "40440283-1ba9-4a65-a6da-c498da92dd93",
+        "type": "rpc",
+        "typeFullFqn": "system.vertical_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/vertical-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06TV_01106 温度调节阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06TV_01106 温度调节阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "\n#widget-container,\ntb-dynamic-component,\ntb-scada-symbol-widget,\n.tb-scada-symbol-panel {\n  overflow: visible !important;\n}\n.tb-scada-symbol-panel {\n  position: relative !important;\n}\n.tb-scada-symbol-panel > .tb-widget-title {\n  position: absolute !important;\n  top: 50% !important;\n  left: 100% !important;\n  transform: translate(4px, -50%) !important;\n  width: max-content !important;\n  max-width: 128px !important;\n  min-height: 0 !important;\n  z-index: 20 !important;\n  pointer-events: none !important;\n  background: rgba(255, 255, 255, 0.72) !important;\n  padding: 0 2px !important;\n  border-radius: 0 !important;\n}\n.tb-scada-symbol-panel > .tb-widget-title .title-row,\n.tb-scada-symbol-panel > .tb-widget-title .title {\n  white-space: normal !important;\n  overflow: visible !important;\n  text-overflow: clip !important;\n}\n.tb-scada-symbol-panel > .tb-widget-title .title {\n  font-size: 11px !important;\n  line-height: 1.15 !important;\n  font-weight: 500 !important;\n}\n",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 11,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.15"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a935c110-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "ad8066f5-f54c-4eeb-959f-a43cb1d5ad94": {
+        "id": "ad8066f5-f54c-4eeb-959f-a43cb1d5ad94",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06PV_01102 压力调节阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06PV_01102 压力调节阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 12,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a978bd80-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "1565a054-e417-419a-b8b4-ffcea6eecec7": {
+        "id": "1565a054-e417-419a-b8b4-ffcea6eecec7",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06PV_01104 氨汽化器相关调节阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06PV_01104 氨汽化器相关调节阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a9b77430-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "ba1177a2-5f52-4479-bd46-cf00705f840a": {
+        "id": "ba1177a2-5f52-4479-bd46-cf00705f840a",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_ball_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-ball-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06LV_02101 闪发器液位阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06LV_02101 闪发器液位阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "a9f98640-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "487e813f-69a1-4997-b37f-1843c50a1878": {
+        "id": "487e813f-69a1-4997-b37f-1843c50a1878",
+        "type": "rpc",
+        "typeFullFqn": "system.vertical_wheel_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/vertical-wheel-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06PV_01109 真空 / 冷却水支路手阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06PV_01109 真空 / 冷却水支路手阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "\n#widget-container,\ntb-dynamic-component,\ntb-scada-symbol-widget,\n.tb-scada-symbol-panel {\n  overflow: visible !important;\n}\n.tb-scada-symbol-panel {\n  position: relative !important;\n}\n.tb-scada-symbol-panel > .tb-widget-title {\n  position: absolute !important;\n  top: 50% !important;\n  left: 100% !important;\n  transform: translate(4px, -50%) !important;\n  width: max-content !important;\n  max-width: 128px !important;\n  min-height: 0 !important;\n  z-index: 20 !important;\n  pointer-events: none !important;\n  background: rgba(255, 255, 255, 0.72) !important;\n  padding: 0 2px !important;\n  border-radius: 0 !important;\n}\n.tb-scada-symbol-panel > .tb-widget-title .title-row,\n.tb-scada-symbol-panel > .tb-widget-title .title {\n  white-space: normal !important;\n  overflow: visible !important;\n  text-overflow: clip !important;\n}\n.tb-scada-symbol-panel > .tb-widget-title .title {\n  font-size: 11px !important;\n  line-height: 1.15 !important;\n  font-weight: 500 !important;\n}\n",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 11,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.15"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "aa3cd0d0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      },
+      "ffc60304-e33f-41f5-8886-7337b306cbda": {
+        "id": "ffc60304-e33f-41f5-8886-7337b306cbda",
+        "type": "rpc",
+        "typeFullFqn": "system.horizontal_wheel_valve",
+        "sizeX": 4,
+        "sizeY": 4,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "rgb(255, 255, 255)",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "0px",
+            "scadaSymbolUrl": "tb-image;/api/images/system/horizontal-wheel-valve.svg",
+            "scadaSymbolObjectSettings": {
+              "behavior": {},
+              "properties": {
+                "title": "06LV_02103 冷凝液外排阀",
+                "showTitle": true
+              }
+            }
+          },
+          "title": "06LV_02103 冷凝液外排阀",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": "Roboto",
+            "weight": "500",
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": null,
+          "pageSize": 1024,
+          "titleIcon": "mdi:lightbulb-outline",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "configMode": "basic",
+          "targetDevice": {
+            "type": "device",
+            "deviceId": "aa860ed0-7a0a-11f1-aed8-2b3e7af0720a"
+          },
+          "titleColor": null,
+          "borderRadius": "0px",
+          "margin": "0px",
+          "datasources": []
+        }
+      }
+    }
+  },
+  "resources": null,
+  "version": 10,
+  "externalId": null
+}
