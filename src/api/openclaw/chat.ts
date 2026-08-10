@@ -28,8 +28,8 @@ openclawHttp.interceptors.response.use(
   },
 );
 
-export function sendZhihuaChat(messages: ChatMessage[]) {
-  return openclawHttp.post<{ message: string }>('/chat', { messages }).then((res) => res.data);
+export function sendZhihuaChat(messages: ChatMessage[], signal?: AbortSignal) {
+  return openclawHttp.post<{ message: string }>('/chat', { messages }, { signal }).then((res) => res.data);
 }
 
 export interface StreamHandlers {

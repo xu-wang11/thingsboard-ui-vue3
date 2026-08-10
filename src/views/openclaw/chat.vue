@@ -36,7 +36,7 @@ import { computed, h, nextTick, ref } from 'vue';
 import { CheckCircleOutlined, UserOutlined } from '@ant-design/icons-vue';
 import { Bubble, Sender } from 'ant-design-x-vue';
 import type { BubbleListProps } from 'ant-design-x-vue';
-import { ChatMessage, streamZhihuaChat } from '/@/api/openclaw/chat';
+import { ChatMessage, sendZhihuaChat } from '/@/api/openclaw/chat';
 import { renderMarkdown } from './renderMarkdown';
 import { publicPath } from '/@/utils/env';
 
@@ -135,18 +135,10 @@ async function onSubmit(text: string) {
 
   abortController = new AbortController();
   try {
-    await streamZhihuaChat(
-      messages.value.slice(0, assistantIndex),
-      {
-        signal: abortController.signal,
-        onDelta: (snapshot) => {
-          messages.value[assistantIndex].content = snapshot;
-          scrollToBottom();
-        },
-      },
-    );
+    const result = await sendZhihuaChat(messages.value.slice(0, assistantIndex), abortController.signal);
+    messages.value[assistantIndex].content = result.message;
   } catch (error) {
-    if ((error as Error)?.name === 'AbortError') {
+    if ((error as Error)?.name === 'AbortError' || (error as { code?: string })?.code === 'ERR_CANCELED') {
       messages.value[assistantIndex].content ||= '（已停止）';
     } else {
       const message = error instanceof Error ? error.message : '智能体暂时不可用';
