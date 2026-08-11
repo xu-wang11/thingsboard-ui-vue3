@@ -33,34 +33,15 @@ const tb: AppRouteModule[] = [
   },
   {
     path: '/knowledge',
-    name: 'Knowledge',
+    name: 'KnowledgeSourceShell',
     component: LAYOUT,
-    redirect: '/knowledge/standards',
-    meta: {
-      orderNo: 3,
-      single: true,
-      icon: 'i-ant-design:read-outlined',
-      tabIcon: 'i-ant-design:read-outlined',
-      title: '\u6807\u51c6\u77e5\u8bc6\u5e93',
-      authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
-    },
+    meta: { hideMenu: true, title: '标准原文' },
     children: [
-      {
-        path: '/knowledge/standards',
-        name: 'KnowledgeStandards',
-        component: () => import('/@/views/knowledge/standards.vue'),
-        meta: {
-          icon: 'i-ant-design:read-outlined',
-          tabIcon: 'i-ant-design:read-outlined',
-          title: '\u6807\u51c6\u77e5\u8bc6\u5e93',
-          authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
-        },
-      },
       {
         path: '/knowledge/source/:docId',
         name: 'KnowledgeSource',
         component: () => import('/@/views/knowledge/source.vue'),
-        meta: { title: 'Source', hideMenu: true, authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER] },
+        meta: { title: '标准原文', hideMenu: true, authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER] },
       },
     ],
   },

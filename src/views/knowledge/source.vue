@@ -19,7 +19,7 @@
       <div v-if="pdfLoading" class="pdf-loading"><a-spin tip="Loading PDF" /></div>
       <template v-for="page in pageNumbers" :key="page">
         <div class="page-shell" :data-page-shell="page">
-          <VuePdfEmbed v-if="renderedPages.has(page)" :source="pdfSource" :page="page" :scale="zoom" text-layer annotation-layer class="pdf-page" @loaded="onDocumentLoaded" @rendered="onPageRendered(page)" @loading-failed="onPdfError" @rendering-failed="onPdfError" />
+          <VuePdfEmbed v-if="renderedPages.has(page) && pdfDocument" :source="pdfDocument" :page="page" :scale="zoom" text-layer annotation-layer class="pdf-page" @rendered="onPageRendered(page)" @loading-failed="onPdfError" @rendering-failed="onPdfError" />
           <div v-else class="page-placeholder">Page {{ page }}</div>
           <div v-if="page === highlightPage" class="page-highlight" :style="highlightStyle" />
           <span class="page-number">{{ page }}</span>
@@ -30,9 +30,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import VuePdfEmbed from 'vue-pdf-embed';
+import VuePdfEmbed, { useVuePdfEmbed } from 'vue-pdf-embed';
 import 'vue-pdf-embed/dist/styles/textLayer.css';
 import 'vue-pdf-embed/dist/styles/annotationLayer.css';
 import { getKnowledgeDocument, knowledgePdfUrl } from '/@/api/knowledge';
@@ -50,28 +50,44 @@ const zoom = ref(1);
 const pdfLoading = ref(true);
 const loadError = ref('');
 const renderedPages = ref(new Set<number>([currentPage.value]));
-const documentInitialized = ref(false);
+const initialPageJumpPending = ref(true);
 const scrollSyncTimer = ref<number | undefined>();
 const docId = String(route.params.docId);
 const buildId = route.query.buildId ? String(route.query.buildId) : undefined;
+const isSopPdf = docId.startsWith('sop:');
 const highlightPage = Number(route.query.page || 1);
 const bbox = computed(() => String(route.query.bbox || '').split(',').map(Number).filter(Number.isFinite));
 const highlightStyle = computed(() => { const b = bbox.value.length === 4 ? bbox.value : [0, 0, 1, 1]; return { left: `${b[0] * 100}%`, top: `${b[1] * 100}%`, width: `${(b[2] - b[0]) * 100}%`, height: `${(b[3] - b[1]) * 100}%` }; });
 const pageNumbers = computed(() => totalPages.value ? Array.from({ length: totalPages.value }, (_, i) => i + 1) : [Math.max(1, currentPage.value)]);
 const authToken = computed(() => String(getToken() || '').replace(/^Bearer\s+/i, ''));
-const pdfSource = computed(() => ({ url: knowledgePdfUrl(docId, buildId), httpHeaders: { 'X-Authorization': authToken.value ? `Bearer ${authToken.value}` : '' } }));
+const pdfUrl = computed(() => isSopPdf ? '/openclaw-api/sop/documents/file' : knowledgePdfUrl(docId, buildId));
+const pdfSource = computed(() => ({
+  url: pdfUrl.value,
+  httpHeaders: { 'X-Authorization': authToken.value ? `Bearer ${authToken.value}` : '' },
+}));
+const { doc: pdfDocument } = useVuePdfEmbed({ source: pdfSource, onError: onPdfError });
 
 function seedRenderedPages(page: number) { const next = new Set(renderedPages.value); for (let i = Math.max(1, page - 2); i <= Math.min(totalPages.value || page + 2, page + 2); i += 1) next.add(i); renderedPages.value = next; }
 function onDocumentLoaded(document: { numPages?: number }) {
-  if (documentInitialized.value) return;
-  documentInitialized.value = true;
   totalPages.value = Number(document?.numPages || 1);
   pdfLoading.value = false;
   seedRenderedPages(currentPage.value);
-  nextTick(() => jumpTo(currentPage.value, false));
 }
 function onPdfError() { pdfLoading.value = false; loadError.value = 'PDF is unavailable or authorization expired'; }
-function onPageRendered(_page: number) { pdfLoading.value = false; }
+watch(pdfDocument, (document) => { if (document) onDocumentLoaded(document); });
+function scrollToPage(page: number, smooth = true) {
+  viewerRef.value?.querySelector<HTMLElement>(`[data-page-shell="${page}"]`)?.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+}
+function onPageRendered(page: number) {
+  pdfLoading.value = false;
+  // A PDFDocumentProxy becomes available before Vue has laid out the target
+  // page.  Wait for that exact page's first paint before applying a citation
+  // locator, otherwise the initial scroll can silently do nothing.
+  if (initialPageJumpPending.value && page === currentPage.value) {
+    initialPageJumpPending.value = false;
+    requestAnimationFrame(() => scrollToPage(page, false));
+  }
+}
 function syncPageUrl(page: number) {
   const url = new URL(window.location.href);
   url.searchParams.set('page', String(page));
@@ -83,7 +99,7 @@ function jumpTo(page: number, syncUrl = true) {
   pageInput.value = target;
   seedRenderedPages(target);
   if (syncUrl) syncPageUrl(target);
-  nextTick(() => viewerRef.value?.querySelector<HTMLElement>(`[data-page-shell="${target}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  nextTick(() => scrollToPage(target));
 }
 function onScroll() {
   const top = viewerRef.value?.getBoundingClientRect().top || 0;
@@ -97,9 +113,24 @@ function onScroll() {
   if (scrollSyncTimer.value) window.clearTimeout(scrollSyncTimer.value);
   scrollSyncTimer.value = window.setTimeout(() => syncPageUrl(page), 250);
 }
-function goBack() { router.push({ name: 'KnowledgeStandards' }); }
-onMounted(async () => { try { const document = await getKnowledgeDocument(docId, buildId); documentTitle.value = document.title || ''; standardCode.value = document.standard_code || ''; } catch (error) { loadError.value = error instanceof Error ? error.message : 'Document metadata unavailable'; } });
-onBeforeUnmount(() => { if (scrollSyncTimer.value) window.clearTimeout(scrollSyncTimer.value); });
+function goBack() { if (route.query.from === 'openclaw' && window.history.length > 1) { router.back(); return; } router.replace({ name: 'OpenClawChat' }); }
+onMounted(async () => {
+  if (isSopPdf) {
+    documentTitle.value = '必美达亚氨基二乙腈实验装置作业指导书';
+    standardCode.value = 'SOP 章节原文';
+    return;
+  }
+  try {
+    const document = await getKnowledgeDocument(docId, buildId);
+    documentTitle.value = document.title || '';
+    standardCode.value = document.standard_code || '';
+  } catch (error) {
+    loadError.value = error instanceof Error ? error.message : 'Document metadata unavailable';
+  }
+});
+onBeforeUnmount(() => {
+  if (scrollSyncTimer.value) window.clearTimeout(scrollSyncTimer.value);
+});
 </script>
 
 <style scoped lang="less">

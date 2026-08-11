@@ -30,6 +30,15 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
   return defaultLinkOpen(tokens, idx, options, env, self);
 };
 
+const allowedChartImage = /^\/chart\/(?:artifacts\/)?[A-Za-z0-9][A-Za-z0-9._-]{0,180}\.png$/;
+md.renderer.rules.image = (tokens, idx) => {
+  const token = tokens[idx];
+  const src = token.attrGet('src') || '';
+  const alt = token.content || '图表';
+  if (!allowedChartImage.test(src)) return md.utils.escapeHtml(alt);
+  return `<img src="${md.utils.escapeHtml(src)}" alt="${md.utils.escapeHtml(alt)}" loading="lazy">`;
+};
+
 export function renderMarkdown(text: string): string {
   return md.render(text ?? '');
 }
