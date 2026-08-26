@@ -32,6 +32,33 @@ const tb: AppRouteModule[] = [
     ],
   },
   {
+    path: '/excel',
+    name: 'ExcelEditor',
+    component: LAYOUT,
+    redirect: '/excel/editor',
+    meta: {
+      orderNo: 5,
+      single: true,
+      icon: 'i-ant-design:file-excel-outlined',
+      tabIcon: 'i-ant-design:file-excel-outlined',
+      title: '报表编辑',
+      authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
+    },
+    children: [
+      {
+        path: '/excel/editor',
+        name: 'ExcelEditorPage',
+        component: () => import('/@/views/openclaw/excel.vue'),
+        meta: {
+          icon: 'i-ant-design:file-excel-outlined',
+          tabIcon: 'i-ant-design:file-excel-outlined',
+          title: '报表编辑',
+          authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
+        },
+      },
+    ],
+  },
+  {
     path: '/tenant',
     name: 'Tenant',
     component: LAYOUT,
@@ -626,6 +653,31 @@ const tb: AppRouteModule[] = [
           tabIcon: 'ant-design:bars-outlined',
           title: t('routes.tb.auditLog'),
           authority: [Authority.TENANT_ADMIN],
+        },
+      },
+    ],
+  },
+
+  {
+    path: '/knowledge',
+    name: 'KnowledgeSource',
+    component: LAYOUT,
+    redirect: '/openclaw/chat',
+    meta: {
+      hideMenu: true,
+      hideTab: true,
+      title: '知识库原文',
+      authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
+    },
+    children: [
+      {
+        path: '/knowledge/source/:docId',
+        name: 'KnowledgeSourceReader',
+        component: () => import('/@/views/openclaw/source.vue'),
+        meta: {
+          hideMenu: true,
+          title: '知识库原文',
+          authority: [Authority.SYS_ADMIN, Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
         },
       },
     ],
