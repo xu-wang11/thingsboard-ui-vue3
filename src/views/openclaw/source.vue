@@ -10,9 +10,9 @@
     </header>
 
     <a-alert v-if="error" type="error" show-icon :message="error" />
-    <div v-else-if="loading" class="loading">正在加载原文 PDF…</div>
-    <template v-else>
-      <nav class="toolbar" aria-label="PDF 阅读控制">
+    <div v-if="loading && !error" class="loading">正在加载原文 PDF…</div>
+    <template v-if="!error">
+      <nav v-show="!loading" class="toolbar" aria-label="PDF 阅读控制">
         <button type="button" :disabled="page <= 1" @click="changePage(page - 1)">上一页</button>
         <label>
           页码
@@ -25,7 +25,8 @@
         <button type="button" @click="zoom(0.2)">放大</button>
         <span class="position-note">命中区域以黄色高亮</span>
       </nav>
-      <div ref="viewportRef" class="pdf-viewport">
+      <!-- canvas 用 v-show 常驻 DOM，确保 renderPage 任何时机都能拿到 canvasRef。 -->
+      <div v-show="!loading" ref="viewportRef" class="pdf-viewport">
         <div class="pdf-page" :style="{ width: pageWidthPx + 'px' }">
           <canvas ref="canvasRef" />
           <div
@@ -41,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+  import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
   import * as pdfjsLib from 'pdfjs-dist';
   import PdfWorker from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
@@ -86,17 +87,27 @@
   let renderTask: pdfjsLib.RenderTask | null = null;
 
   async function loadPdf() {
-    const endpoint = isSop.value
-      ? `${apiBase}/sop/documents/file`
-      : `${apiBase}/rag/documents/${encodeURIComponent(docId.value)}/file${
-          route.query.buildId ? `?build_id=${encodeURIComponent(String(route.query.buildId))}` : ''
-        }`;
+    let endpoint: string;
+    if (isSop.value) {
+      endpoint = `${apiBase}/sop/documents/file`;
+    } else {
+      const params = new URLSearchParams();
+      if (route.query.buildId) params.set('build_id', String(route.query.buildId));
+      if (route.query.name) params.set('name', String(route.query.name));
+      const qs = params.toString();
+      endpoint = `${apiBase}/rag/documents/${encodeURIComponent(docId.value)}/file${qs ? `?${qs}` : ''}`;
+    }
     const token = getToken();
     const response = await fetch(endpoint, { headers: token ? { 'X-Authorization': `Bearer ${token}` } : {} });
     if (!response.ok) {
       throw new Error(response.status === 404 ? '原文文件尚未迁入该服务器。' : `加载原文失败（${response.status}）`);
     }
     const data = await response.arrayBuffer();
+    const head = new Uint8Array(data.slice(0, 5));
+    // %PDF magic bytes — 后端异常时可能返回 JSON 错误体，避免喂给 pdf.js 崩溃。
+    if (!(head[0] === 0x25 && head[1] === 0x50 && head[2] === 0x44 && head[3] === 0x46)) {
+      throw new Error('原文文件不可用或格式错误。');
+    }
     pdfDoc = await pdfjsLib.getDocument({ data }).promise;
     totalPages.value = pdfDoc.numPages;
     if (page.value > totalPages.value) page.value = totalPages.value;
@@ -170,6 +181,7 @@
   onMounted(async () => {
     try {
       await loadPdf();
+      await nextTick();
       await renderPage();
     } catch (reason) {
       error.value = reason instanceof Error ? reason.message : '加载原文失败';

@@ -42,7 +42,7 @@ function authHeaders() {
 export function generateReport(month: string) {
   return excelHttp
     .post('/excel/report', { month }, { headers: authHeaders() })
-    .then((res) => res.data as { snapshot: IWorkbookData; token: string });
+    .then((res) => res.data as { snapshot: IWorkbookData; token: string; source?: { filename: string; sheet_count: number; supplemented_cells: number; mode?: 'full' | 'cumulative'; frozen_cross_sheet_formulas?: { cell: string; formula: string; saved_value: number | string }[] } | null });
 }
 
 /** Export by regenerating the report from the DB and injecting edits. Returns .xlsx bytes. */
@@ -60,12 +60,24 @@ export function exportCurrent(token: string, edits: CellEdit[]) {
     .then((res) => res.data as ArrayBuffer);
 }
 
-/** Persist the current edits into the cached generated file and write the manual-edit records
- * (with detected row/col meanings) to the edits JSON. Returns how many edits were saved. */
+/** Persist the current edits and write manually-edited tagged cells back to ThingsBoard.
+ * Returns how many edits were saved to the staging file plus a DB write-back summary. */
 export function updateDatabase(token: string, edits: CellEdit[], month: string) {
   return excelHttp
     .post('/excel/update-db', { token, edits, month }, { headers: authHeaders() })
-    .then((res) => res.data as { ok: boolean; saved: number });
+    .then(
+      (res) =>
+        res.data as {
+          ok: boolean;
+          saved: number;
+          written: number;
+          devices: number;
+          storage?: 'report';
+          skipped: Record<string, number>;
+          details: { tag: string; key: string; points: number }[];
+          errors: string[];
+        },
+    );
 }
 
 /** Heartbeat: refresh the cached report's TTL so it never expires while the page is open. */

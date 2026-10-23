@@ -18,7 +18,13 @@
             </Tooltip>
           </div>
         </div>
-        <iframe class="dashboard-frame" :src="frameSrc" ref="frameRef" allow="fullscreen" @load="hideLoading"></iframe>
+        <iframe
+          ref="frameRef"
+          class="dashboard-frame"
+          :src="frameSrc"
+          allow="fullscreen"
+          @load="handleFrameLoad"
+        ></iframe>
       </div>
     </Spin>
   </div>
@@ -29,7 +35,7 @@
   });
 </script>
 <script lang="ts" setup>
-  import { computed, CSSProperties, defineComponent, ref, unref, watch } from 'vue';
+  import { computed, CSSProperties, defineComponent, onBeforeUnmount, onMounted, ref, unref, watch } from 'vue';
   import { router } from '/@/router';
   import { Spin, Tooltip } from 'ant-design-vue';
   import { FullscreenExitOutlined, FullscreenOutlined, ReloadOutlined } from '@ant-design/icons-vue';
@@ -43,6 +49,7 @@
   import { useGlobSetting } from '/@/hooks/setting';
 
   const padding = 13;
+  const readyTimeoutMs = 12_000;
 
   const loading = ref(true);
   const topRef = ref(50);
@@ -51,6 +58,7 @@
 
   const dashboardId = ref<string>(router.currentRoute.value.params.dashboardId as string);
   const record = ref<Dashboard>({} as Dashboard);
+  let readyTimeout: ReturnType<typeof setTimeout> | undefined;
 
   const { setTitle } = useTabs();
   const { t } = useI18n('tb');
@@ -65,6 +73,14 @@
     return `${tbBaseUrl}/dashboard/${dashboardId.value}`;
   });
 
+  const allowedFrameOrigin = computed(() => {
+    try {
+      return new URL(frameSrc.value, window.location.href).origin;
+    } catch {
+      return window.location.origin;
+    }
+  });
+
   useWindowSizeFn(calcHeight, 150, { immediate: true });
 
   watch(
@@ -74,11 +90,21 @@
         return;
       }
       dashboardId.value = newVal as string;
-      loading.value = true;
+      startReadyTimeout();
       await getDashboard();
     },
     { immediate: true },
   );
+
+  onMounted(() => {
+    window.addEventListener('message', handleDashboardMessage);
+    startReadyTimeout();
+  });
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('message', handleDashboardMessage);
+    clearReadyTimeout();
+  });
 
   const getWrapStyle = computed((): CSSProperties => {
     return {
@@ -110,8 +136,42 @@
     if (!iframe) {
       return;
     }
-    loading.value = true;
+    startReadyTimeout();
     iframe.contentWindow?.location.reload();
+  }
+
+  function clearReadyTimeout() {
+    if (readyTimeout !== undefined) {
+      clearTimeout(readyTimeout);
+      readyTimeout = undefined;
+    }
+  }
+
+  function startReadyTimeout() {
+    loading.value = true;
+    clearReadyTimeout();
+    readyTimeout = setTimeout(() => {
+      hideLoading();
+    }, readyTimeoutMs);
+  }
+
+  function handleDashboardMessage(event: MessageEvent) {
+    if (event.origin !== allowedFrameOrigin.value) {
+      return;
+    }
+    if (event.source !== unref(frameRef)?.contentWindow) {
+      return;
+    }
+    if (event.data?.type !== 'HB_TWIN_READY') {
+      return;
+    }
+    hideLoading();
+  }
+
+  function handleFrameLoad() {
+    calcHeight();
+    applyEmbeddedTheme();
+    fixScadaBackground();
   }
 
   function applyEmbeddedTheme() {
@@ -142,10 +202,52 @@
     iframeDocument.head.appendChild(style);
   }
 
+  function fixScadaBackground(attempt = 0) {
+    const doc = unref(frameRef)?.contentDocument;
+    if (!doc) {
+      return;
+    }
+    const layout = doc.querySelector('tb-dashboard-layout');
+    const gridster = layout?.querySelector('gridster') as HTMLElement | null;
+    const bgEl = layout
+      ? (Array.from(layout.querySelectorAll('div.mat-content')).find((el) =>
+          /url\(/.test(getComputedStyle(el as Element).backgroundImage),
+        ) as HTMLElement | undefined)
+      : undefined;
+    // SCADA 看板渲染是异步的,元素尚未出现就重试
+    if (!layout || !gridster || !bgEl) {
+      if (attempt < 40) {
+        setTimeout(() => fixScadaBackground(attempt + 1), 300);
+      }
+      return;
+    }
+    const bg = getComputedStyle(bgEl).backgroundImage;
+    if (!bg || bg === 'none') {
+      if (attempt < 40) {
+        setTimeout(() => fixScadaBackground(attempt + 1), 300);
+      }
+      return;
+    }
+    if (gridster.dataset.scadaBgFixed === '1') {
+      return;
+    }
+    // 背景图(产线连线)原挂在不滚动的 mat-content 上,而符号在会滚动的 gridster 里,
+    // 上下滑动时二者错位。把背景移到 gridster 并用 local 让它随内容一起滚,消除漂移。
+    gridster.style.backgroundImage = bg;
+    gridster.style.backgroundRepeat = 'no-repeat';
+    gridster.style.backgroundPosition = '0 0';
+    gridster.style.backgroundSize = '100% auto';
+    gridster.style.backgroundAttachment = 'local';
+    gridster.dataset.scadaBgFixed = '1';
+    bgEl.style.backgroundImage = 'none';
+  }
+
   function hideLoading() {
+    clearReadyTimeout();
     applyEmbeddedTheme();
     loading.value = false;
     calcHeight();
+    fixScadaBackground();
   }
 </script>
 <style scoped>
