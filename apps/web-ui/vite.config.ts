@@ -11,10 +11,23 @@ export default defineConfig(async (config) => {
         [string, string, boolean?, boolean?]
       >;
       return Object.fromEntries(
-        entries.map(([prefix, target, changeOrigin = false, ws = false]) => [
-          prefix,
-          { changeOrigin, target, ws },
-        ]),
+        entries.map(([prefix, target, changeOrigin = false, ws = false]) => {
+          const targetUrl = new URL(target);
+          const targetPath = targetUrl.pathname.replace(/\/$/u, '');
+          return [
+            prefix,
+            {
+              changeOrigin,
+              // A target path means "replace the public prefix", matching the
+              // proxy tuple semantics used by the legacy frontend config.
+              rewrite: targetPath
+                ? (path: string) => `${targetPath}${path.slice(prefix.length)}`
+                : undefined,
+              target: targetUrl.origin,
+              ws,
+            },
+          ];
+        }),
       );
     } catch {
       return {};

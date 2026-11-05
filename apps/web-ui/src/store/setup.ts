@@ -14,8 +14,11 @@ export const useSetupStore = defineStore('setup', () => {
       .then((info) => {
         status.value = info.status || 'UNKNOWN';
       })
-      .catch(() => {
-        status.value = undefined;
+      .catch((error: any) => {
+        // The setup API was added in ThingsBoard 4.4. Existing 4.3 servers are
+        // already initialized and answer 404; retain strict failure handling
+        // for every other response and for connectivity errors.
+        status.value = error?.response?.status === 404 ? 'READY' : undefined;
       })
       .finally(() => {
         pending = undefined;
