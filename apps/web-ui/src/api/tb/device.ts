@@ -69,10 +69,10 @@ export interface DeviceQueryParams extends PageLink {
   active?: boolean;
 }
 
-/** 租户设备分页列表(GET /api/tenant/deviceInfos) */
+/** 当前用户可见的设备信息分页列表(GET /api/deviceInfos/all, ThingsBoard 4.4+) */
 export function getTenantDeviceInfos(params: DeviceQueryParams) {
-  return requestClient.get<PageData<DeviceInfo>>('/tenant/deviceInfos', {
-    params,
+  return requestClient.get<PageData<DeviceInfo>>('/deviceInfos/all', {
+    params: { ...params, includeCustomers: true },
   });
 }
 
