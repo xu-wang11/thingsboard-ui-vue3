@@ -1,33 +1,73 @@
+# Dependencies and package manager files (keep pnpm-lock.yaml tracked)
 node_modules
-Thumbs.db
-.DS_Store
-.cache
-.claude
+.pnpm-store
+package-lock.json
+yarn.lock
+
+# Build output and deployment archives
 dist
-CLAUDE.md
+dist-ssr
+dev-dist
+.nitro
+.output
+dist.zip
+dist.tar
+dist.war
+*-dist.zip
+*-dist.tar
+*-dist.war
 
-# Test files
-tests/server/static
-tests/server/static/upload
-
-# Local files
-.local
-.env.local
-.env.*.local
+# Caches, temporary files, and coverage
+.cache
+.temp
+.turbo
 .eslintcache
+.stylelintcache
+**/.vitepress/cache
+coverage
+vite.config.js.*
+vite.config.ts.*
+vite.config.mjs.*
+vite.config.mts.*
 
-# Log files
+# Local configuration and mock data (includes .env.*.local and .local/)
+*.local
+**/backend-mock/data
+
+# Logs
+logs
+*.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-vite.config.ts.timestamp*
+lerna-debug.log*
 
-# IDE files
+# Operating system and editor files
+.DS_Store
 .idea
+.history
+.VSCodeCounter
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-*.iml
+
+# AI and local tool data
+.agent
+.agents
+.atomcode
+.claude/
+.codex/
+.cursor
+.omx
+.playwright-mcp
+CLAUDE.local.md
+datalog
+skills-lock.json
+
+# Repository-local changesets and documentation
+/.changeset/
+/.docs/
+/docs/

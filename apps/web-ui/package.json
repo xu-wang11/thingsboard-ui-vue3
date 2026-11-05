@@ -1,0 +1,93 @@
+{
+  "name": "thingsboard-ui",
+  "version": "4.4.0",
+  "description": "Vue 3 frontend for ThingsBoard, built with Vben Admin, Vite, TypeScript and antdv-next.",
+  "keywords": [
+    "thingsboard",
+    "iot",
+    "dashboard",
+    "vue3",
+    "typescript",
+    "vite",
+    "antdv-next",
+    "vben"
+  ],
+  "homepage": "https://github.com/oliver225/thingsboard-ui-vue3",
+  "bugs": {
+    "url": "https://github.com/oliver225/thingsboard-ui-vue3/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliver225/thingsboard-ui-vue3.git",
+    "directory": "apps/web-ui"
+  },
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "oliver225",
+    "url": "https://github.com/oliver225"
+  },
+  "contributors": [
+    {
+      "name": "vben",
+      "email": "ann.vben@gmail.com",
+      "url": "https://github.com/anncwb"
+    }
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "pnpm vite build --mode production",
+    "build:analyze": "pnpm vite build --mode analyze",
+    "dev": "pnpm vite --mode development",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@antv/x6": "catalog:",
+    "@antv/x6-vue-shape": "catalog:",
+    "@vant/area-data": "catalog:",
+    "@vben-core/popup-ui": "workspace:*",
+    "@vben-core/shadcn-ui": "workspace:*",
+    "@vben/access": "workspace:*",
+    "@vben/common-ui": "workspace:*",
+    "@vben/constants": "workspace:*",
+    "@vben/hooks": "workspace:*",
+    "@vben/icons": "workspace:*",
+    "@vben/layouts": "workspace:*",
+    "@vben/locales": "workspace:*",
+    "@vben/plugins": "workspace:*",
+    "@vben/preferences": "workspace:*",
+    "@vben/request": "workspace:*",
+    "@vben/stores": "workspace:*",
+    "@vben/styles": "workspace:*",
+    "@vben/table": "workspace:*",
+    "@vben/types": "workspace:*",
+    "@vben/utils": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "@wasm-fmt/clang-format": "catalog:",
+    "@univerjs/preset-sheets-core": "0.25.1",
+    "@univerjs/presets": "0.25.1",
+    "ant-design-vue": "catalog:",
+    "ant-design-x-vue": "^1.6.0",
+    "antdv-next": "catalog:",
+    "axios": "catalog:",
+    "dayjs": "catalog:",
+    "echarts": "catalog:",
+    "highlight.js": "^11.11.1",
+    "js-beautify": "catalog:",
+    "markdown-it": "^14.1.0",
+    "monaco-editor": "catalog:",
+    "pdfjs-dist": "4.7.76",
+    "pinia": "catalog:",
+    "protobufjs": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "xlsx": "catalog:"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2"
+  }
+}

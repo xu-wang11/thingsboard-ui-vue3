@@ -1,0 +1,35 @@
+{
+  "name": "@vben/table",
+  "version": "5.8.0",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "sideEffects": [
+    "./src/index.ts",
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@antdv-next/icons": "catalog:",
+    "@vben-core/popup-ui": "workspace:*",
+    "@vben-core/shadcn-ui": "workspace:*",
+    "@vben/access": "workspace:*",
+    "@vben/hooks": "workspace:*",
+    "@vben/icons": "workspace:*",
+    "@vben/locales": "workspace:*",
+    "@vben/types": "workspace:*",
+    "@vben/utils": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "antdv-next": "catalog:",
+    "dayjs": "catalog:",
+    "es-toolkit": "catalog:",
+    "vue": "catalog:"
+  }
+}
