@@ -78,7 +78,7 @@
 
   const BubbleList = Bubble.List;
   const router = useRouter();
-  const hebangLogo = `${publicPath}/resource/img/hebang_user.png`;
+  const hebangLogo = `${publicPath}resource/img/hebang_user.png`;
   const STORAGE_KEY = 'hebang-openclaw-chat-v2';
   const SCROLL_STORAGE_KEY = 'hebang-openclaw-chat-scroll-v2';
   const ALARM_SINCE_KEY = 'hebang-openclaw-alarm-since-v1';
